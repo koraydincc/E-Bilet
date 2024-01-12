@@ -1,7 +1,8 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Select, Space } from 'antd';
-import dayjs, { Dayjs } from 'dayjs';
+import dayjs from 'dayjs';
+import 'dayjs/locale/tr';
 import locale from 'antd/es/date-picker/locale/tr_TR';
 import { DatePicker } from 'antd';
 import { CartContext } from '../Context/CartContext';
@@ -14,12 +15,19 @@ function HeaderAndFooterExample() {
   const { selectedKalkisSehir, selectedVarisSehir, answerVoyage, SeferBul, setSelectedKalkisSehir, setSelectedVarisSehir } =
     useContext(CartContext) || {};
 
-    const disabledDate = (current: Dayjs) => {  
-      return current && current < dayjs().endOf('day');  
-    };
-    const onChange = (date: Dayjs | null, dateString: string) => {
-      console.log(date, dateString);
-    };
+  const disabledDate = (current: dayjs.Dayjs) => {
+    return current && current < dayjs().endOf('day');
+  };
+
+  const onChange = (date: dayjs.Dayjs | null, dateString: string) => {
+    console.log(date, dateString);
+  };
+
+  const presets = [
+    { label: 'Yarın', value: dayjs().add(1, 'd').locale('tr') },
+    // Diğer presetleri buraya ekleyebilirsiniz
+  ];
+
   console.log(answerVoyage);
 
   return (
@@ -46,10 +54,7 @@ function HeaderAndFooterExample() {
               <DatePicker
                 disabledDate={disabledDate}
                 locale={locale}
-                presets={[
-                  { label: 'Yarın', value: dayjs().add(1, 'd') },
-                  // Diğer presetleri buraya ekleyebilirsiniz
-                ]}
+                presets={presets}
                 onChange={onChange}
               />
             </Space>
