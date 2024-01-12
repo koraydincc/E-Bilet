@@ -1,0 +1,19 @@
+
+[
+      {
+        "id": 1,
+        "kalkisSehir": "Istanbul",
+        "varisSehir": "Ankara",
+        "kalkisSaati": "2024-01-10",
+        "varisSaati": "12:00",
+        "fiyat": "750TL"
+      },
+      {
+        "id": 2,
+        "kalkisSehir": "Ankara",
+        "varisSehir": "Izmir",
+        "kalkisSaati": "14:00",
+        "varisSaati": "17:00",
+        "fiyat": "600TL"
+      }
+]

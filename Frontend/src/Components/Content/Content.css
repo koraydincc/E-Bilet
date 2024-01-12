@@ -1,0 +1,20 @@
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 50vh; /* Ekran yüksekliği kadar uzatmak istiyorsanız */
+    width: 100%; /* Yatayda tam ekran genişliği */
+  }
+  
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://images.pexels.com/photos/842711/pexels-photo-842711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100%; /* Ekran yüksekliği kadar doldurmak için */
+    width: 100%;
+  }
