@@ -1,5 +1,4 @@
 import './Content.css'
-import React, { ReactNode } from 'react';
 import SelectBox from '../SelectBox/SelectBox'
 
 

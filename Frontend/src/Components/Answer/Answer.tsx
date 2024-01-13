@@ -1,9 +1,15 @@
-import React, { useContext } from 'react';
-import { Button, Table, Card,Spin } from 'antd';
+import React, { useContext, useState } from 'react';
+import { Button, Table, Card, Spin } from 'antd';
 import { CartContext } from '../Context/CartContext';
+import BuyModal from '../Modal/BuyModal';
+import { Link } from 'react-router-dom';
 
 const AnswerTable: React.FC = () => {
   const { answerVoyage, showAnswer, seferBulunamadi } = useContext(CartContext) || {};
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+ 
+
 
   const columns = [
     {
@@ -35,24 +41,46 @@ const AnswerTable: React.FC = () => {
       title: 'Satın Al',
       key: 'action',
       render: (_: any, record: any) => (
-        <Button type='primary'>
-          <a>Satın Al</a>
-        </Button>
+        <Button type="primary" onClick={() => handleId(record.id)}>
+       <Link to={`/seferler/${record.id}`}>Koltuk Seç</Link>
+
+      </Button>
+      
       ),
     },
   ];
 
+  const handleId = (tiklananId: number) => {
+    const selectedId = answerVoyage?.find((oge) => oge.id === tiklananId);
+    
+    if (selectedId) {
+      console.log('Bulunan Öğe:', selectedId);
+      setIsModalOpen(true);
+    } else {
+      console.log('Öğe bulunamadı.');
+    }
+  };
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div>
       {showAnswer && answerVoyage && !seferBulunamadi ? (
-       <Table
-       loading={{ indicator: <div><Spin/></div>, spinning: !answerVoyage }}
-       pagination={{ position: ['bottomCenter'], defaultPageSize: 10, showSizeChanger: true, pageSizeOptions: ['10', '20', '30'] }}
-       dataSource={answerVoyage}
-       columns={columns}
-       
-     />
-     
+        <>
+          <Table
+            loading={{ indicator: <div><Spin /></div>, spinning: !answerVoyage }}
+            pagination={{ position: ['bottomCenter'], defaultPageSize: 10, showSizeChanger: true, pageSizeOptions: ['10', '20', '30'] }}
+            dataSource={Array.isArray(answerVoyage) ? answerVoyage : [answerVoyage]}
+
+            columns={columns}
+          />
+          <BuyModal visible={isModalOpen} onBuy={handleOk} onCancel={handleCancel} />
+        </>
       ) : (
         <div>
           {showAnswer && seferBulunamadi ? (

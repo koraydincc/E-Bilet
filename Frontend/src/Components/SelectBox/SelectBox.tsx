@@ -7,9 +7,12 @@ import locale from 'antd/es/date-picker/locale/tr_TR';
 import { DatePicker } from 'antd';
 import { CartContext } from '../Context/CartContext';
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 
 const kalkisSehirleri = ['Istanbul', 'Samsun'];
 const varisSehirleri = ['Ankara', 'Düzce'];
+
+
 
 function HeaderAndFooterExample() {
   const { selectedKalkisSehir, selectedVarisSehir, answerVoyage, SeferBul, setSelectedKalkisSehir, setSelectedVarisSehir } =
@@ -60,8 +63,8 @@ function HeaderAndFooterExample() {
             </Space>
           </Space>
         </Card.Text>
-        <Button variant="primary" onClick={SeferBul}>
-          Otobüs Bileti Bul
+        <Button variant="primary">
+          <Link style={{color:'white'}} onClick={SeferBul} color='white' to="/seferler">Otobüs Seferi Bul</Link>
         </Button>
       </Card.Body>
     </Card>
