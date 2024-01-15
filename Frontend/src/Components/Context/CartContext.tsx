@@ -52,19 +52,17 @@ export const CartProvider: React.FC<CartContextProps> = ({ children }) => {
 
   const SeferBul = () => {
     if (selectedKalkisSehir && selectedVarisSehir) {
-        const foundSeferler: Sefer[] = seferler.filter(
-            (sefer) =>
-              sefer.kalkisSehir === selectedKalkisSehir &&
-              sefer.varisSehir === selectedVarisSehir &&
-              new Date(sefer.kalkisTarihi) >= new Date()
-          );
-      
-
+      const foundSeferler: Sefer[] = seferler.seferler.filter( 
+        (sefer) =>
+          sefer.kalkisSehir === selectedKalkisSehir &&
+          sefer.varisSehir === selectedVarisSehir &&
+          new Date(sefer.kalkisTarihi) >= new Date()
+      );
+  
       console.log('Bulunan Seferler:', foundSeferler);
-
+  
       if (foundSeferler.length > 0) {
         setAnswerVoyage(foundSeferler);
-
         setShowAnswer(true);
         setSeferBulunamadi(false);
       } else {
@@ -78,7 +76,6 @@ export const CartProvider: React.FC<CartContextProps> = ({ children }) => {
       alert('Lütfen kalkış ve varış şehirlerini seçin.');
     }
   };
-
   const value: CartContextValue = {
     selectedKalkisSehir,
     selectedVarisSehir,
