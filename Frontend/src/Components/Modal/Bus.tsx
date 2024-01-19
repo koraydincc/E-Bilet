@@ -2,7 +2,7 @@ import React, { useContext, } from 'react';
 import { CartContext } from '../Context/CartContext'; // Replace with the correct path
 import { useParams } from 'react-router-dom';
 
-const App: React.FC = () => {
+const Bus: React.FC = () => {
   const { answerVoyage, showAnswer, seferBulunamadi } = useContext(CartContext) || {};
 
 
@@ -14,8 +14,9 @@ const App: React.FC = () => {
     <>
      
        {id}
+       {answerVoyage?.map((info)=>info.kalkisSehir)}
     </>
   );
 };
 
-export default App;
+export default Bus;

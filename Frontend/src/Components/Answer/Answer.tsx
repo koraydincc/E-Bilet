@@ -4,13 +4,12 @@ import { CartContext } from '../Context/CartContext';
 import BuyModal from '../Modal/BuyModal';
 import { Link, useParams } from 'react-router-dom';
 
+
 const AnswerTable: React.FC = () => {
   const { answerVoyage, showAnswer, seferBulunamadi } = useContext(CartContext) || {};
   const [isModalOpen, setIsModalOpen] = useState(false);
-  
-  const { id } = useParams();
 
-  console.log(id)
+  const { id } = useParams();
 
   const columns = [
     {
@@ -51,11 +50,11 @@ const AnswerTable: React.FC = () => {
 
   const handleId = (tiklananId: number) => {
     const selectedId = answerVoyage?.find((oge) => oge.id === tiklananId);
-      
+
     if (selectedId) {
       console.log('Bulunan Öğe:', selectedId);
+
       setIsModalOpen(true);
-      // You can use "selectedId.id" here if needed
     } else {
       console.log('Öğe bulunamadı.');
     }
@@ -79,7 +78,12 @@ const AnswerTable: React.FC = () => {
             dataSource={Array.isArray(answerVoyage) ? answerVoyage : [answerVoyage]}
             columns={columns}
           />
-          <BuyModal  title="Basic Modal" maskClosable={false} visible={isModalOpen} onBuy={handleOk} onCancel={handleCancel} />
+          <BuyModal
+            title="Basic Modal"
+            maskClosable={false}
+            visible={isModalOpen}
+            onBuy={handleOk}
+            onCancel={handleCancel}        />
         </>
       ) : (
         <div>

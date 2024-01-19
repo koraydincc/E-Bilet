@@ -1,7 +1,11 @@
+// BuyModal.tsx
+
 import React from 'react';
 import { Modal, Button } from 'antd';
 import Bus from './Bus';
 import { Link } from 'react-router-dom';
+
+
 
 interface BuyModalProps {
   title: string;
@@ -11,16 +15,15 @@ interface BuyModalProps {
   onCancel: () => void;
 }
 
-const BuyModal: React.FC<BuyModalProps> = ({  title, maskClosable, visible, onBuy, onCancel }) => {
+const BuyModal: React.FC<BuyModalProps> = ({ title, maskClosable, visible, onBuy, onCancel }) => {
   return (
     <Modal
       title="Koltuk Seç"
       visible={visible}
-      onOk={onBuy} 
+      onOk={onBuy}
       onCancel={onCancel}
-      maskClosable={false}  // Modal dışına tıklanınca kapanmasını engelle
+      maskClosable={false}
       footer={[
-        
         <Button key="buy" type="primary" onClick={onBuy}>
           Satın Al
         </Button>,
@@ -29,7 +32,7 @@ const BuyModal: React.FC<BuyModalProps> = ({  title, maskClosable, visible, onBu
         </Button>
       ]}
     >
-      <Bus></Bus>
+      <Bus />
     </Modal>
   );
 };
