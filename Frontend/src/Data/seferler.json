@@ -4,7 +4,7 @@
       "id": 1,
       "kalkisSehir": "Istanbul",
       "varisSehir": "Ankara",
-      "kalkisTarihi": "2024-01-17",
+      "kalkisTarihi": "2024-02-17",
       "kalkisSaati": "12:00",
       "varisSaati": "15:30",
       "fiyat": "750TL"
@@ -13,7 +13,7 @@
       "id": 2,
       "kalkisSehir": "Ankara",
       "varisSehir": "Izmir",
-      "kalkisTarihi": "2024-01-19",
+      "kalkisTarihi": "2024-02-19",
       "kalkisSaati": "14:00",
       "varisSaati": "17:00",
       "fiyat": "600TL"
@@ -22,7 +22,7 @@
       "id": 3,
       "kalkisSehir": "Istanbul",
       "varisSehir": "Düzce",
-      "kalkisTarihi": "2024-01-19",
+      "kalkisTarihi": "2024-02-19",
       "kalkisSaati": "14:30",
       "varisSaati": "18:30",
       "fiyat": "500TL"
@@ -31,7 +31,7 @@
       "id": 4,
       "kalkisSehir": "Izmir",
       "varisSehir": "Antalya",
-      "kalkisTarihi": "2024-01-18",
+      "kalkisTarihi": "2024-02-18",
       "kalkisSaati": "16:00",
       "varisSaati": "19:30",
       "fiyat": "800TL"
@@ -40,7 +40,7 @@
       "id": 5,
       "kalkisSehir": "Ankara",
       "varisSehir": "Samsun",
-      "kalkisTarihi": "2024-01-17",
+      "kalkisTarihi": "2024-02-17",
       "kalkisSaati": "18:45",
       "varisSaati": "22:00",
       "fiyat": "550TL"
@@ -49,7 +49,7 @@
       "id": 6,
       "kalkisSehir": "Istanbul",
       "varisSehir": "Ankara",
-      "kalkisTarihi": "2024-01-18",
+      "kalkisTarihi": "2024-02-18",
       "kalkisSaati": "15:00",
       "varisSaati": "19:30",
       "fiyat": "750TL"

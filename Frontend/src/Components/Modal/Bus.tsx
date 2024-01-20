@@ -1,20 +1,36 @@
-import React, { useContext, } from 'react';
-import { CartContext } from '../Context/CartContext'; // Replace with the correct path
+// Bus.tsx
+import React, { useContext } from 'react';
+import { CartContext } from '../Context/CartContext';
 import { useParams } from 'react-router-dom';
+import { Typography } from 'antd';
 
-const Bus: React.FC = () => {
-  const { answerVoyage, showAnswer, seferBulunamadi } = useContext(CartContext) || {};
+import './Bus.css'; // Stil dosyanızı içeri aktarın
 
+export interface BusProps {
+  koltukNo: number;
+  dolu: boolean;
+  secili: boolean;
+  onSelect: (koltukNo: number) => void;
+}
 
-  const { id } = useParams()
+const Bus: React.FC<BusProps> = ({ koltukNo, dolu, secili, onSelect }) => {
+  const handleClick = () => {
+    if (!dolu) {
+      onSelect(koltukNo);
+    }
+  };
 
+  const { Text } = Typography;
 
+  const { answerVoyage } = useContext(CartContext) || {};
+  const { id } = useParams();
+  const selectedVoyage = answerVoyage?.filter((sefer) => String(sefer.id) === id);
 
   return (
     <>
-     
-       {id}
-       {answerVoyage?.map((info)=>info.kalkisSehir)}
+      <div className={`koltuk ${dolu ? 'dolu' : ''} ${secili ? 'secili' : ''}`} onClick={handleClick}>
+        {koltukNo}
+      </div>
     </>
   );
 };

@@ -1,0 +1,28 @@
+/* Bus.css */
+.koltuk {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    user-select: none; /* Kullanıcının metni seçmesini engeller */
+  }
+  
+  .koltuk.dolu {
+    background-color: #ffcccc;
+    cursor: not-allowed;
+  }
+  
+  .koltuk.secili {
+    background-color: #66b3ff;
+  }
+  
+  .koltuk-salonu {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 sütunlu bir grid oluşturur, 10x4 otobüs tasarımı */
+    gap: 10px;
+  }
+  

@@ -46,10 +46,9 @@ export const CartProvider: React.FC<CartContextProps> = ({ children }) => {
   const [answerVoyage, setAnswerVoyage] = useState<Sefer[] | null>(null);
   const [seferBulunamadi, setSeferBulunamadi] = useState(false);
   const [showAnswer, setShowAnswer] = useState(false);
-
-
-  
-
+ 
+   
+ 
   const SeferBul = () => {
     if (selectedKalkisSehir && selectedVarisSehir) {
       const foundSeferler: Sefer[] = seferler.seferler.filter( 
